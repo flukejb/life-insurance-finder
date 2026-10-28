@@ -1,0 +1,13 @@
+{
+  "name": "life-insurance-finder",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Compare life insurance carriers with live rate-environment data. Hosted free on Cloudflare Pages.",
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public --project-name life-insurance-finder"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
