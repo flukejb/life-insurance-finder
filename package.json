@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "Compare life insurance carriers with live rate-environment data. Hosted free on Cloudflare Pages.",
   "scripts": {
-    "dev": "wrangler pages dev public",
-    "deploy": "wrangler pages deploy public --project-name life-insurance-finder"
+    "dev": "wrangler dev --port 8788",
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"

@@ -3,7 +3,7 @@
 A modern single-page app to research and compare life insurance carriers. It loads live rate-environment
 data on every visit, with a **Refresh** button, and estimates premiums for your profile.
 
-**Hosting:** Cloudflare Pages (free: unlimited bandwidth, 100k function requests/day, no credit card).
+**Hosting:** Cloudflare Workers with static assets (free: 100k requests/day, no credit card).
 
 ## What is live vs. modeled
 
@@ -32,20 +32,17 @@ npm install
 npm run dev     # http://localhost:8788
 ```
 
-## Deploy free on Cloudflare Pages
+## Deploy free on Cloudflare
 
-Option A: connect the repo (auto-deploys on every push)
-
-1. Sign in at <https://dash.cloudflare.com> and open **Workers & Pages** > **Create** > **Pages** > **Connect to Git**.
-2. Pick this repo. Framework preset: **None**. Build command: *(empty)*. Build output directory: `public`.
-3. Save and deploy. You get a `*.pages.dev` URL.
-
-Option B: from the command line
+Command line:
 
 ```bash
 npx wrangler login
-npm run deploy
+npm run deploy      # runs `wrangler deploy`
 ```
+
+Auto-deploy on push: in the Cloudflare dashboard open **Workers & Pages** > **Create** > **Import a repository**,
+pick this repo, leave the build command empty, and keep the deploy command as `npx wrangler deploy`.
 
 ## Updating carrier data
 
